@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env bash
 
 JARFILE="`pwd`/src/scala/microsoft-spark-2.4.x/target/microsoft-spark-2.4.x-3.33.3.jar"
 PACKAGE="`pwd`/artifacts/packages/Release"
