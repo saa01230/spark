@@ -20,7 +20,7 @@ namespace Microsoft.Spark
     /// on all RDDs.
     /// </summary>
     /// <typeparam name="T">Type of the elements in the RDD</typeparam>
-    internal class RDD<T> : IJvmObjectReferenceProvider
+    public class RDD<T> : IJvmObjectReferenceProvider
     {
         /// <summary>
         /// The JVM object for this RDD. This can be null if the current

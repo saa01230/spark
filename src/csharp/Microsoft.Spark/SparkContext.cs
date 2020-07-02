@@ -226,7 +226,7 @@ namespace Microsoft.Spark
         /// <param name="seq">Collection to distribute</param>
         /// <param name="numSlices">Number of partitions to divide the collection into</param>
         /// <returns>RDD representing distributed collection</returns>
-        internal RDD<T> Parallelize<T>(IEnumerable<T> seq, int? numSlices = null)
+        public RDD<T> Parallelize<T>(IEnumerable<T> seq, int? numSlices = null)
         {
             var formatter = new BinaryFormatter();
             using var memoryStream = new MemoryStream();
@@ -257,7 +257,7 @@ namespace Microsoft.Spark
         /// <param name="path">path to the text file on a supported file system</param>
         /// <param name="minPartitions">minimum number of partitions for the resulting RDD</param>
         /// <returns>RDD of lines of the text file</returns>
-        internal RDD<string> TextFile(string path, int? minPartitions = null)
+        public RDD<string> TextFile(string path, int? minPartitions = null)
         {
             return new RDD<string>(
                 WrapAsJavaRDD((JvmObjectReference)_jvmObject.Invoke(
